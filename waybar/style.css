@@ -1,0 +1,57 @@
+* {
+    padding: 0 8px;
+    border: none;
+    border-radius: 0;
+    font-family: "Terminus (TTF)", "Font Awesome 5 Brands", "Font Awesome 5 Free Solid", "Font Awesome 5 Free", "cryptocoins:style=Regular";
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+
+#workspaces button {
+    padding: 0 0px;
+    background-color: transparent;
+    color: #ffffff;
+    border-bottom: 3px solid rgba(43, 48, 59, 0.5);
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+    border-bottom: 3px solid #ffffff;
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#temperature.critical {
+    color: #d92626;
+}
+
+@keyframes rainbow {
+    0% {color: #d92626;}
+    10% {color: #d98026;}
+    20% {color: #d9d926;}
+    30% {color: #80d926;}
+    40% {color: #26d926;}
+    50% {color: #26d980;}
+    60% {color: #26d9d9;}
+    70% {color: #267fd9;}
+    80% {color: #2626d9;}
+    90% {color: #7f26d9;}
+    100% {color: #d92626;}
+  
+  }
