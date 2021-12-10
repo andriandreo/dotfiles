@@ -99,8 +99,8 @@ exec swaync
 # exec --no-startup-id /usr/local/bin/alternating_layouts.py
 exec autotiling
 exec foot --server
-exec python ~/.config/sway/rice.py
-exec streamdeck -n
+#exec python ~/.config/sway/rice.py
+exec python3 /usr/share/sway/scripts/inactive-windows-transparency.py
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
