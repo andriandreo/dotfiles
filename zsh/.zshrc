@@ -20,7 +20,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   export QT_FONT_DPI=96
   eval $(gnome-keyring-daemon --start)
   # export SSH_AUTH_SOCK
-  export MOZ_DBUS_REMOTE=1 
+  # export MOZ_DBUS_REMOTE=1 
   exec sway -D noatomic
 fi
 
