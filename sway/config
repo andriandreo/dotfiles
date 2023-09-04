@@ -2,14 +2,15 @@
 set $mod Mod4
 font "Terminus (TTF)" 11
 default_border none
+default_floating_border none
 floating_modifier $mod
 focus_follows_mouse always
 
-# reload the configuration file
+# reload the configuration file  
 bindsym $mod+Shift+c reload
 
-input * xkb_layout "es" 
-# input * xkb_variant "intl"
+input * xkb_layout "us" 
+input * xkb_variant "intl"
 
 # Enable Num. Lock
 input * xkb_numlock enable
@@ -63,6 +64,7 @@ set $ws2 "2: 2"
 set $ws3 "3: 3"
 set $ws4 "4: 4"
 set $ws5 "5: 5"
+set $ws6 "6: 6"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -70,6 +72,9 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+
+bindsym $mod+A scratchpad show
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -77,6 +82,9 @@ bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+
+bindsym $mod+Shift+A move container to scratchpad
 
 # Wallpapers
 set $wallpapers ~/Pictures/Wallhaven/
@@ -85,7 +93,7 @@ output "*" bg `find $wallpapers -type f | shuf -n 1` fill
 # GNOME Themes & icons
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-  gsettings set $gnome-schema gtk-theme 'Flat-Remix-GTK-Green-Dark'
+  gsettings set $gnome-schema gtk-theme 'MonoThemeDark'
   gsettings set $gnome-schema icon-theme 'Inverse-orange-dark'
 }
 
@@ -100,11 +108,10 @@ exec swaync
 # exec --no-startup-id /usr/local/bin/alternating_layouts.py
 exec autotiling
 exec foot --server
-#exec python ~/.config/sway/rice.py
-exec python3 /usr/share/sway/scripts/inactive-windows-transparency.py
+exec python ~/.config/sway/rice.py #Soft transitions
+# exec python3 /usr/share/sway/scripts/inactive-windows-transparency.py #Hard transitions
 
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
