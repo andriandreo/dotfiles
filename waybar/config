@@ -16,9 +16,7 @@
              "3: 3": "",
              "4: 4": "<span color=\"#1DB954\"></span>",
              "5: 5": "<span color=\"#b91d34\"></span>",
-             "urgent": "",
-             "focused": "",
-             "default": ""
+             "6: 6": "<span color=\"#1DB954\"></span>"
          }
      },
     
@@ -155,14 +153,6 @@
         "interval": 3600,
         "return-type": "json"
     },
-    "custom/crypto": {
-    "format": "{}",
-    "interval": 600,
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/crypto.py",
-    "exec-if": "ping pro-api.coinmarketcap.com -c1"
-    },
-
      "custom/mail": {
             "tooltip": false,
             "exec": "sh $HOME/.config/waybar/scripts/mail.sh",
@@ -173,7 +163,7 @@
 
      "custom/cpu": {
         "exec": "~/.config/waybar/scripts/cpu_graphical.py 0.1 2",
-        "format": " {}",
+        "format": " {}",
         "tooltip": true,
         "return-type": "json",
         "on-click": "foot htop"
