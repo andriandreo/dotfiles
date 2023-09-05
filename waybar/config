@@ -4,9 +4,9 @@
     "height": 20, 
     "modules-left": [ "disk", "memory", "cpu", "custom/cpu", "sway/mode", "temperature#cpu", "temperature#gpu", "custom/gpu", "temperature#nvme", "custom/paru" ],
     "modules-center": ["sway/workspaces"],
-    "modules-right": ["custom/crypto", "custom/airquality", "custom/media","custom/weather", "custom/ping", "pulseaudio", "network", "clock", "tray" ],
+    "modules-right": ["custom/airquality", "custom/media","custom/weather", "custom/ping", "pulseaudio", "network", "clock", "tray" ],
 
-     "sway/workspaces": {
+    "sway/workspaces": {
          "disable-scroll": false,
          "all-outputs": true,
          "format": "{icon}",
@@ -24,15 +24,18 @@
         "icon-size": 22,
         "spacing": 5
     },
+
     "clock": {
 	"format": " {:%a %d %b %H:%M}",
 	"tooltip-format": "<tt>{calendar}</tt>"
     },
+
     "cpu": {
         "interval": 1,
         "format": "<span color=\"#ff8c00\"></span> {max_frequency}GHz  {usage}%",
         "on-click": "foot htop --sort-key PERCENT_CPU"
     },
+    
     "memory": {
         "format": " {used:0.1f}G/{total:0.1f}G {}%"
     },
@@ -48,11 +51,12 @@
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}"
     },
 
-     "disk": {
+    "disk": {
        "interval": 30,
        "format": " {free} {percentage_used}%",
        "path": "/"
     },
+
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{format_source}  {icon} {volume}%",
@@ -90,7 +94,7 @@
 	"format": "GPU  {temperatureC}°C"
     },
 
-     "temperature#nvme": {
+    "temperature#nvme": {
         "hwmon-path-abs": "/sys/class/nvme/nvme0/device/hwmon/",
         "input-filename": "temp1_input",
         "critical-threshold": 80,
@@ -98,7 +102,7 @@
         "format": "NVME  {temperatureC}°C"
     },
 
-     "custom/mediaplayer": {
+    "custom/mediaplayer": {
         "format": "{}",
         "max-length": 40,
         "exec": "~/.config/waybar/scripts/mediaplayer.sh",
@@ -108,7 +112,8 @@
         "on-click-right": "playerctl next",
         "interval": 5
     },
-     "custom/paru": {
+
+    "custom/paru": {
         "format": " {}",
         "interval": 3600,                     
         "exec": "paru -Qu | wc -l",
@@ -139,6 +144,7 @@
         "interval": 5,
         "escape": true
     },
+
     "custom/airquality": {
         "format": "{}",
         "max-length": 40,
@@ -146,6 +152,7 @@
         "interval": 5,
         "escape": true
     },
+
     "custom/weather": {
         "format": "{}",
         "tooltip": true,
@@ -153,7 +160,8 @@
         "interval": 3600,
         "return-type": "json"
     },
-     "custom/mail": {
+
+    "custom/mail": {
             "tooltip": false,
             "exec": "sh $HOME/.config/waybar/scripts/mail.sh",
             "interval": 120,
@@ -161,7 +169,15 @@
         
     },
 
-     "custom/cpu": {
+    "custom/crypto": {
+        "format": "{}",
+        "interval": 600,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/crypto.py",
+        "exec-if": "ping pro-api.coinmarketcap.com -c1"
+        },
+
+    "custom/cpu": {
         "exec": "~/.config/waybar/scripts/cpu_graphical.py 0.1 2",
         "format": " {}",
         "tooltip": true,
@@ -169,7 +185,7 @@
         "on-click": "foot htop"
     },
 
-      "custom/gpu": {
+    "custom/gpu": {
         "exec": "$HOME/.config/waybar/scripts/custom-gpu.sh",
         "return-type": "json",
         "format": "{}",
@@ -178,13 +194,15 @@
         "on-click": "powerupp"
       
     }, 
-       "custom/hack": {
+    
+    "custom/hack": {
         "format": "{}",
         "max-length": 40,
         "exec": "~/.config/waybar/scripts/hack.sh",
         "interval": 5,
         "escape": true
     },
+
     "custom/vpn":{
     "format": "{icon}",
     "tooltip-format": "{icon}",
@@ -192,5 +210,5 @@
     "return-type": "json",
     "interval": 5,
     "format-icons": ["",""]
-  }
+    }
 }
