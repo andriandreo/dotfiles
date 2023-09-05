@@ -1,6 +1,6 @@
 #eval "$(starship init zsh)"
 
-# export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
+#export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket
 
 # Autostart odrive/BoxSync agent
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then  
@@ -14,14 +14,16 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   export XDG_SESSION_TYPE=wayland
   export XDG_CURRENT_DESKTOP=sway
   export NO_AT_BRIDGE=1
-  export MOZ_ENABLE_WAYLAND=true
+  export MOZ_ENABLE_WAYLAND=true # Use =1 or =true to support wayland or xwayland Window Protocol, respectively
   export _JAVA_AWT_WM_NONREPARENTING=1
   export QT_QPA_PLATFORMTHEME=qt5ct
   export QT_FONT_DPI=96
-  eval $(gnome-keyring-daemon --start)
+  #export GTK_USE_PORTAL=1
+  #export GDK_DEBUG=portals # New command for the above (?)
+  # eval $(gnome-keyring-daemon --start) # Uncomment only if anytype is used
   # export SSH_AUTH_SOCK
-  # export MOZ_DBUS_REMOTE=1 
-  exec sway -D noatomic
+  export MOZ_DBUS_REMOTE=1 # Use DBUS remote exclusively, i.e. allow to X11 and Wayland Firefox instances to run together (may be needed when opening web links from other applications to e.g. Firefox)
+  exec sway
 fi
 
 # Fetch & lolcat
@@ -49,5 +51,4 @@ alias cat="bat"
 
 # rsync: Not cp anymore
 alias cp="rsync -a --info=progress2"
-
 
