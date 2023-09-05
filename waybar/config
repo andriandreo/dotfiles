@@ -7,17 +7,17 @@
     "modules-right": ["custom/airquality", "custom/media","custom/weather", "custom/ping", "pulseaudio", "network", "clock", "tray" ],
 
     "sway/workspaces": {
-         "disable-scroll": false,
-         "all-outputs": true,
-         "format": "{icon}",
-         "format-icons": {
-             "1: 1": "<span color=\"#29d7e0\"></span>",
-             "2: 2": "",
-             "3: 3": "",
-             "4: 4": "<span color=\"#1DB954\"></span>",
-             "5: 5": "<span color=\"#b91d34\"></span>",
-             "6: 6": "<span color=\"#1DB954\"></span>"
-         }
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1: 1": "<span color=\"#29d7e0\"></span>",
+            "2: 2": "",
+            "3: 3": "",
+            "4: 4": "<span color=\"#1DB954\"></span>",
+            "5: 5": "<span color=\"#b91d34\"></span>",
+            "6: 6": "<span color=\"#1DB954\"></span>"
+        }
      },
     
     "tray": {
@@ -26,8 +26,8 @@
     },
 
     "clock": {
-	"format": " {:%a %d %b %H:%M}",
-	"tooltip-format": "<tt>{calendar}</tt>"
+	    "format": " {:%a %d %b %H:%M}",
+	    "tooltip-format": "<tt>{calendar}</tt>"
     },
 
     "cpu": {
@@ -79,26 +79,26 @@
     },
 
     "temperature#cpu": {
-	"hwmon-path-abs": "/sys/devices/platform/nct6775.656/hwmon/",
-	"critical-threshold": 80,
-	"input-filename": "temp2_input",
+	    "hwmon-path-abs": "/sys/devices/platform/nct6775.656/hwmon/",
+	    "critical-threshold": 80,
+	    "input-filename": "temp2_input",
         "format-critical": "CPU  {temperatureC}°C",
-	"format": "CPU  {temperatureC}°C"
+	    "format": "CPU  {temperatureC}°C"
     },
 
     "temperature#gpu": {
-	"hwmon-path-abs": "/sys/class/drm/card0/device/hwmon",
+	    "hwmon-path-abs": "/sys/class/drm/card0/device/hwmon",
         "critical-threshold": 80,
         "input-filename": "temp1_input",
         "format-critical": "GPU  {temperatureC}°C",
-	"format": "GPU  {temperatureC}°C"
+	    "format": "GPU  {temperatureC}°C"
     },
 
     "temperature#nvme": {
         "hwmon-path-abs": "/sys/class/nvme/nvme0/device/hwmon/",
         "input-filename": "temp1_input",
         "critical-threshold": 80,
-    "format-critical": "NVME  {temperatureC}°C",
+        "format-critical": "NVME  {temperatureC}°C",
         "format": "NVME  {temperatureC}°C"
     },
 
@@ -122,7 +122,7 @@
         "signal": 8
     },
 
-        "custom/media": {
+    "custom/media": {
         "format": "<span color=\"#1DB954\">{icon}</span> {}",
         "return-type": "json",
         "max-length": 50,
@@ -134,7 +134,7 @@
         "on-click-middle": "playerctl -p spotify play-pause",
         "on-click": "playerctl -p spotify previous",
         "on-click-right": "playerctl -p spotify next",
-         "exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null"
+        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null"
     },
 
     "custom/ping": {
@@ -162,10 +162,10 @@
     },
 
     "custom/mail": {
-            "tooltip": false,
-            "exec": "sh $HOME/.config/waybar/scripts/mail.sh",
-            "interval": 120,
-            "on-click": "thunderbird && swaymsg '[app_id=thunderbird] focus'"
+        "tooltip": false,
+        "exec": "sh $HOME/.config/waybar/scripts/mail.sh",
+        "interval": 120,
+        "on-click": "thunderbird && swaymsg '[app_id=thunderbird] focus'"
         
     },
 
@@ -204,11 +204,11 @@
     },
 
     "custom/vpn":{
-    "format": "{icon}",
-    "tooltip-format": "{icon}",
-    "exec": "~/.config/waybar/scripts/hackthebox.sh",
-    "return-type": "json",
-    "interval": 5,
-    "format-icons": ["",""]
+        "format": "{icon}",
+        "tooltip-format": "{icon}",
+        "exec": "~/.config/waybar/scripts/hackthebox.sh",
+        "return-type": "json",
+        "interval": 5,
+        "format-icons": ["",""]
     }
 }
