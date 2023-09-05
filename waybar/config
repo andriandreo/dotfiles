@@ -2,7 +2,7 @@
     "layer": "top", 
     "position": "bottom",
     "height": 20, 
-    "modules-left": [ "disk", "memory", "cpu", "custom/cpu", "sway/mode", "temperature#cpu", "temperature#gpu", "custom/gpu", "temperature#nvme", "custom/paru" ],
+    "modules-left": ["disk", "memory", "cpu", "custom/cpu", "temperature#cpu", "temperature#gpu", "custom/gpu", "temperature#nvme", "custom/paru"],
     "modules-center": ["sway/workspaces"],
     "modules-right": ["custom/airquality", "custom/media","custom/weather", "custom/ping", "pulseaudio", "network", "clock", "tray" ],
 
