@@ -4,7 +4,7 @@
     "height": 20, 
     "modules-left": ["disk", "memory", "cpu", "custom/cpu", "temperature#cpu", "temperature#gpu", "custom/gpu", "temperature#nvme", "custom/paru"],
     "modules-center": ["sway/workspaces"],
-    "modules-right": ["custom/airquality", "custom/media","custom/weather", "custom/ping", "pulseaudio", "network", "clock", "tray" ],
+    "modules-right": ["custom/airquality", "custom/media","custom/weather", "custom/ping", "pulseaudio", "network", "clock", "tray"],
 
     "sway/workspaces": {
         "disable-scroll": false,
