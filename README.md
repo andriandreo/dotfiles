@@ -1,1 +1,1 @@
-My personal Wayland Dotfiles.
+My personal Dotfiles.
