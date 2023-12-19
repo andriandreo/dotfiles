@@ -1,17 +1,30 @@
+# Replicate zsh prompt behaviour with CWD (Current Working Directory)
+export PS1='%n@%m %1~ %# '
+
+# Fetch & lolcat
 neofetch | lolcat
 
-# Simulate xterm via ssh
-alias ssh="TERM=xterm-256color ssh"
+# zsh plugins & dev
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Env variables & dev
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/share/python:$PATH"
-export NODATE_HOME="$HOME/STM32/Nodate"
+# paru: pacman helper
+alias yay="paru"
 
-alias pip="pip3" 
-alias get_idf='. $HOME/esp/esp-idf/export.sh'
+# Server SSH shortcut
+# alias server="ssh server.lan"
 
-# zsh plugins
-source $HOMEBREW_PREFIX/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOMEBREW_PREFIX/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# exa: a modern replacement for ls
+alias ls="exa"
+alias lt="exa --tree"
+alias la="exa -la"
+
+# bat: a cat clone with wings
+alias cat="bat"
+
+# rsync: no cp anymore
+alias cp="rsync -a --info=progress2"
+
+# Run ifconfig to get IP if needed
+sleep 7 # Wait for a few seconds
+ifconfig
