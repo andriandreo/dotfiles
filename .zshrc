@@ -28,3 +28,4 @@ alias cp="rsync -a --info=progress2"
 # Run ifconfig to get IP if needed
 sleep 7 # Wait for a few seconds
 ifconfig
+ip address show end0
