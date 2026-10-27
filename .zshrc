@@ -65,7 +65,7 @@ bindkey '^[[3~' delete-char             # Delete
 # ==============================================================================
 # 5. ALIASES
 # ==============================================================================
-alias yay="sudo pacman"
+alias yay="sudo pacman" # NOTE. This is NOT HOW `yay`/`paru` WORK AT ALL AND SHOULD BE AVOIDED unless min. setup is required and you know what you're doing (!)
 # alias k=kubectl
 # alias server="ssh server.lan"
 
