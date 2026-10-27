@@ -1,4 +1,10 @@
 # ==============================================================================
+# 0. BASE SYSTEM CONFIGURATION (GRML)
+# ==============================================================================
+# Load the Arch-managed Grml baseline config if it exists
+[ -f /etc/zsh/zshrc ] && source /etc/zsh/zshrc
+
+# ==============================================================================
 # 1. ENVIRONMENT VARIABLES & PATHS
 # ==============================================================================
 export SSH_AUTH_SOCK=/run/user/1000/ssh-agent.socket    # Reduce auth frequency in SSH | AUTH SOCKET
